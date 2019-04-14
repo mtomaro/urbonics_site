@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Planter #1 - Matt's Urbonics Farm </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  .onoffswitch {
+      position: relative; width: 90px;
+      -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  }
+  .onoffswitch-checkbox {
+      display: none;
+  }
+  .onoffswitch-label {
+      display: block; overflow: hidden; cursor: pointer;
+      border: 2px solid #999999; border-radius: 20px;
+  }
+  .onoffswitch-inner {
+      display: block; width: 200%; margin-left: -100%;
+      transition: margin 0.3s ease-in 0s;
+  }
+  .onoffswitch-inner:before, .onoffswitch-inner:after {
+      display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+      font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+      box-sizing: border-box;
+  }
+  .onoffswitch-inner:before {
+      content: "ON";
+      padding-left: 10px;
+      background-color: #34A7C1; color: #FFFFFF;
+  }
+  .onoffswitch-inner:after {
+      content: "OFF";
+      padding-right: 10px;
+      background-color: #EEEEEE; color: #999999;
+      text-align: right;
+  }
+  .onoffswitch-switch {
+      display: block; width: 18px; margin: 6px;
+      background: #FFFFFF;
+      position: absolute; top: 0; bottom: 0;
+      right: 56px;
+      border: 2px solid #999999; border-radius: 20px;
+      transition: all 0.3s ease-in 0s;
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+      margin-left: 0;
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+      right: 0px;
+  }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 757px) {
+      .row.content {height: auto;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav hidden-xs">
+      <h2>Planter #1</h2>
+      <p>Type of Produce:</p>
+      <img src="images/tomato.png" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <br>
+
+    <div class="col-sm-9">
+      <div class="well">
+        <h4>Planter #1 - Matt's Urbonics Farm</h4>
+        <p>Produce: Tomato</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="well">
+            <h4>pH Level</h4>
+            <iframe width="100%" height="250" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/732724/charts/5?bgcolor=%23ffffff&color=%23d52020&dynamic=true&results=50&type=line&xaxis=time&yaxis=pH"></iframe>
+            <ul style="list-style:none;padding:0px">
+              <li>pH Level <input type="number" value="7" name="pH" min="1" max="14" style="width:15%" > <input type="submit" value="Update" style="width:;text-align:center"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="well">
+            <h4>EC Level</h4>
+            <iframe width="100%" height="250" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/732724/charts/5?bgcolor=%23ffffff&color=%23d52020&dynamic=true&results=50&type=line&xaxis=time&yaxis=pH"></iframe>
+            <ul style="list-style:none;padding:0px">
+              <li>EC Level (microseiemens) <input type="number" value="120" name="pH" min="1" max="14" style="width:15%" ><input type="submit" value="Update" style="width:;text-align:center"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="well">
+            <h4>Light Status</h4>
+            <div class="onoffswitch">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="well">
+            <h4>Water Level</h4>
+            <iframe width="100%" height="250" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/732724/charts/5?bgcolor=%23ffffff&color=%23d52020&dynamic=true&results=50&type=line&xaxis=time&yaxis=pH"></iframe>
+            <ul style="list-style:none;padding:0px">
+              <li>Water Level (cm)<input type="number" value="20" name="pH" min="1" max="14" style="width:15%"><input type="submit" value="Update" style="width:;text-align:center"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="well">
+            <h4>Temperature</h4>
+            <iframe width="100%" height="250" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/732724/charts/5?bgcolor=%23ffffff&color=%23d52020&dynamic=true&results=50&type=line&xaxis=time&yaxis=pH"></iframe>
+            <ul style="list-style:none;padding:0px">
+              <li>Room Temperature (degrees)<input type="number" value="70" name="pH" min="1" max="14" style="width:15%"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
